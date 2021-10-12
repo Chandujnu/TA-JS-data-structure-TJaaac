@@ -82,4 +82,3 @@ let lastColor = colors[colors.lenght - 1];
 
 colors[45] ="tomato";
 console.log(colors[length]);
-

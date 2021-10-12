@@ -33,7 +33,6 @@ for (let i = 0; i < numbers.length; i++) {
 }
 // 6. Find the even numbers in the array and print them to the console using console.log()
 
-let even = [];
 for(let number of numbers) {
     if(number % 2 == 0) {
         console.log(number);
@@ -42,7 +41,6 @@ for(let number of numbers) {
 
 // 7. Find the odd numbers in the array and print them to the console using console.log()
 
-let odd = [];
 for(let number of numbers) {
     if(number % 2 != 0){
         console.log(number);
@@ -51,7 +49,6 @@ for(let number of numbers) {
 
 // 8. Find the numbers in the array that is divisible by 5 and print them to the console using console.log()
 
-let numDivByFive = [];
 for (let number of numbers) {
     if(number % 5 == 0) {
         console.log(number);
@@ -59,11 +56,11 @@ for (let number of numbers) {
 }
 
 // 9. Log all the element of the array one by one
-numbers[0];
-
+for(let number of numbers) {
+    console.log(number);
+}
 
 // 10. Find all the number in the array that is divisible by 3
-let numDivByThree = [];
 for(let number of numbers) {
     if(number % 3 == 0) {
         console.log(number);

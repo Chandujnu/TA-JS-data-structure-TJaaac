@@ -4,14 +4,26 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
 
+let sum = 0;
+  sum = (numbers + "," +  userIds);
+  let collection = sum;
+console.log(collection);
+
+
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
+
+let evenCollection = 0;
+for(let number of collection)
+if (number % 2 == 0); 
+console.log(number);
+
 
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
 
 /*
   @param means parameter
 
- 4. Write a function named times which accets two parameter and return an array. 
+ 4. Write a function named times which accepts two parameter and return an array. 
 
   @param times (number)
   @param character (string)

@@ -11,19 +11,19 @@ let arr2 = arr;
 
 Answer the following with reason after going through the above code:
 
-- `[10] === [10]`
-- What is the value of obj? // answer
-- `obj == newObj`
-- `obj === newObj`
-- `user === newObj`
-- `user == newObj`
-- `user == obj`
-- `arr == arr2`
-- `arr === arr2`
+- `[10] === [10]` // false, As there is no any variable as `10` in above code.
+- What is the value of obj? // { surname: 'Stark' }, As is value of `obj` get updated.
+- `obj == newObj` // false, As is value of `obj` get updated to { surname: 'Stark' }
+- `obj === newObj` // false, As is value of `obj` get updated to { surname: 'Stark' }
+- `user === newObj` // false, As is value of `obj` get updated to { surname: 'Stark' }, and value of obj get coppied by reference to `user`.
+- `user == newObj` // false, As is value of `obj` get updated to { surname: 'Stark' }, and value of obj get coppied by reference to `user`.
+- `user == obj` // true, As value of `obj` get coppied by reference to `arr2`.
+- `arr == arr2` // true, As value of `arr` get coppied by reference to `arr`.
+- `arr === arr2` // true, As value of `arr` get coppied by reference to `arr`.
 
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
-<!-- To add this image here use ![name](./hello.jpg) -->
+ ![image](./img1.jpeg)
 
 ```js
 function personDetails(person) {

@@ -10,12 +10,12 @@ let person2 = person;
 
 person.firstName = 'Arya';
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // `Arya`
+console.log(person.firstName); // `Arya`
+console.log(person.lastName); // `Doe`
+console.log(person == person2); // true
+console.log(person === person2); // true
+console.log(person.lastName === person2.lastName); // true
 ```
 
 2. Write the output with reason:
@@ -37,17 +37,23 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // `John` As address of value of variable `personTwo` has been cloned from variable `person`.
+
+console.log(person.firstName); // `Arya` value of `person` has been updated to `Arya`
+
+console.log(personTwo.lastName); // `Doe`, As address of value of variable `personTwo` has been cloned from variable `person`, and lastName of both variable is `Doe`.
+
+console.log(person.firstName === personTwo.firstName); // false, `Arya` As address of value of variable `personTwo` has been cloned from variable `person`, but value of `person` has been updated to `Arya` and it will not update the value of varible `personTwo`.
+
+console.log(person == personTwo); // false, `Arya` As address of value of variable `personTwo` has been cloned from variable `person`, but value of `person` has been updated to `Arya` and it will not update the value of varible `personTwo`.
+
+console.log(person === personTwo); // false, `Arya` As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(person.address == personTwo.address); // false, `Arya` As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(personTwo.address.city); // `San Jose`, As address of value of variable `personTwo` has been cloned from variable `person`.
+console.log(person.address.city); // `San Jose`,
+console.log(person.address.city == personTwo.address.city); // true, 
 ```
 
 3. Write the output with reason:
@@ -69,17 +75,25 @@ let personTwo = { ...person, address: { ...person.address } };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // `John`, As address of value of variable `personTwo` has been cloned from variable `person`.
+
+console.log(person.firstName); // `Arya``Arya` value of `person` has been updated to `Arya`
+
+console.log(personTwo.lastName); // `Doe` As assigned in in the variable `lastName`
+
+console.log(person.firstName === personTwo.firstName); // false, As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(person == personTwo); // false, As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(person === personTwo); // false, As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(person.address === personTwo.address); // false, As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(person.address == personTwo.address); // false, As address of value of variable `personTwo` has been cloned from variable `person`, and hence it formed different addresses.
+
+console.log(personTwo.address.city); // `San Jose`
+console.log(person.address.city); // `San Jose`
+console.log(person.address.city == personTwo.address.city); // true
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -103,7 +117,8 @@ let blogs = [
   },
 ];
 
-// Your code goes here
+let clonedBlogs = [...blogs];
+
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -128,7 +143,10 @@ var questions = [
   },
 ];
 
-// Your code goes here
+let questionClone = [
+  ...questions, 
+  responses:[...questions.responses],
+];
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -155,7 +173,12 @@ var allBlogs = {
   ],
 };
 
-// Your code goes here
+let allBlogsClone = {
+  ...allBlogs,
+  author:{...allBlogs.author},
+  comments:[...allBlogs.comments],
+}
+
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -189,6 +212,12 @@ let person = [
 ];
 
 // Your code goes here
+let clonePerson = [
+  ...person,
+  input:{...person.input, birthday:{...input.birthday},},
+  output:{...person.output},
+];
+
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
